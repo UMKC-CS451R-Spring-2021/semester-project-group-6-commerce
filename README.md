@@ -2,3 +2,4 @@
 
 ## Members
 Lauren Magee 
+Cory Free
