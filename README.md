@@ -3,3 +3,4 @@
 ## Members
 Lauren Magee 
 Cory Free
+Mohamud Abdi 
