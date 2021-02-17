@@ -2,6 +2,7 @@
 
 ## Members
 Lauren Magee 
-Saurav Pawar
 Cory Free
+Mohamud Abdi 
+Saurav Pawar
 
