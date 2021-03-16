@@ -261,3 +261,24 @@ article {
     margin-right: auto;
     margin-left: auto;
 }
+
+.textButton {
+    background: none;
+    border: none;
+    font: poppins;
+    font-size: 25px;
+    float: right;
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.whitebackground {
+    background-color: white;
+    font-family: 'Poppins';
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+}
