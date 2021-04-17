@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8J7nzdysY86ThnggdDGe04CGAW6dzEXEokf7lqwdupR3m0vQe+vZuwjyg90OQrEzy6QOPHyxZD2SRQD+sJdLfA==",
+  "dgSpecHash": "j2j7juOjRF3i8tBW+5wA3PXOcQIpjtAr7zBdrIT+SYrSPVTp/r1fWb59EtvNmuvb+8DB6vWbagoxyODeS7z/8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tchiv\\Desktop\\commercebank_mysqlscripts\\Commerce_Bank\\Commerce_Bank.DataAccess\\Commerce_Bank.DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\tchiv\\Desktop\\semester-project-group-6-commerce\\Commerce_Bank\\Commerce_Bank.DataAccess\\Commerce_Bank.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tchiv\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\tchiv\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -21,6 +21,8 @@
     "C:\\Users\\tchiv\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\tchiv\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
     "C:\\Users\\tchiv\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\tchiv\\.nuget\\packages\\mysqlconnector\\1.1.0\\mysqlconnector.1.1.0.nupkg.sha512",
+    "C:\\Users\\tchiv\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\5.0.0-alpha.2\\pomelo.entityframeworkcore.mysql.5.0.0-alpha.2.nupkg.sha512",
     "C:\\Users\\tchiv\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\tchiv\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\tchiv\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512"

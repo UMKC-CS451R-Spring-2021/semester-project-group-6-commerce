@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tchiv\\Desktop\\commercebank_mysqlscripts\\Commerce_Bank\\Commerce_Bank.DataAccess\\Commerce_Bank.DataAccess.csproj": {}
+    "C:\\Users\\tchiv\\Desktop\\semester-project-group-6-commerce\\Commerce_Bank\\Commerce_Bank.DataAccess\\Commerce_Bank.DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tchiv\\Desktop\\commercebank_mysqlscripts\\Commerce_Bank\\Commerce_Bank.DataAccess\\Commerce_Bank.DataAccess.csproj": {
+    "C:\\Users\\tchiv\\Desktop\\semester-project-group-6-commerce\\Commerce_Bank\\Commerce_Bank.DataAccess\\Commerce_Bank.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tchiv\\Desktop\\commercebank_mysqlscripts\\Commerce_Bank\\Commerce_Bank.DataAccess\\Commerce_Bank.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\tchiv\\Desktop\\semester-project-group-6-commerce\\Commerce_Bank\\Commerce_Bank.DataAccess\\Commerce_Bank.DataAccess.csproj",
         "projectName": "Commerce_Bank.DataAccess",
-        "projectPath": "C:\\Users\\tchiv\\Desktop\\commercebank_mysqlscripts\\Commerce_Bank\\Commerce_Bank.DataAccess\\Commerce_Bank.DataAccess.csproj",
+        "projectPath": "C:\\Users\\tchiv\\Desktop\\semester-project-group-6-commerce\\Commerce_Bank\\Commerce_Bank.DataAccess\\Commerce_Bank.DataAccess.csproj",
         "packagesPath": "C:\\Users\\tchiv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tchiv\\Desktop\\commercebank_mysqlscripts\\Commerce_Bank\\Commerce_Bank.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\tchiv\\Desktop\\semester-project-group-6-commerce\\Commerce_Bank\\Commerce_Bank.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -53,6 +53,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.5, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[5.0.0-alpha.2, )"
             }
           },
           "imports": [

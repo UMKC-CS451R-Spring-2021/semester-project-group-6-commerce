@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Commerce_Bank.DataAccess.Model;
+using Commerce_Bank.DataAccess.Services;
+using Commerce_Bank.DataAccess.Services.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 
 namespace Commerce_Bank.Api
 {
@@ -28,9 +31,22 @@ namespace Commerce_Bank.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            //this helps to grab the connection string value from appsettings.json
+            //this helps to inject the connection string value from appsettings.json
             string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContextPool<CommerceBankAppContext>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
+            //inject the service in this method to enable the api to interact and fetch desired records from the Data Access Layer(DAL)
+            services.AddScoped(typeof(IUserService), typeof(UserService)); //this binds the userservice(concrete class) to the light weight Iuserservice
+            //meaning that where ever we have Iuserservice we indirectly have access to the Userservice(concrete) class methods
+            services.AddScoped(typeof(IPersonService), typeof(PersonService));
+            services.AddScoped(typeof(IAccountTypeService), typeof(AccountTypeService));
+            services.AddScoped(typeof(IBankActivityService), typeof(BankActivityService));
+            services.AddScoped(typeof(IAccountService), typeof(AccountService));
+            services.AddScoped(typeof(IRepositoryService<>), typeof(RepositoryService<>));
+            //this is for api documentation
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Commerce_Bank API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +62,14 @@ namespace Commerce_Bank.Api
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseSwagger();
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("../swagger/v1/swagger.json", "Commerce Bank API v1");
+                
+            });
 
             app.UseEndpoints(endpoints =>
             {
