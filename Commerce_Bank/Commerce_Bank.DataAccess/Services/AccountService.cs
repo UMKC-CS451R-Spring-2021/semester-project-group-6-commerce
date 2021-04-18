@@ -13,13 +13,21 @@ namespace Commerce_Bank.DataAccess.Services
         private readonly IUserService _userService;
         private readonly IPersonService _personService;
         private readonly IBankActivityService _bankActivityService;
+        private readonly ILastTransactionService _lastTransactionService;
         //contructor injection(Dependency injection)
-        public AccountService(IUserService userService, IPersonService personService,IBankActivityService bankActivityService)
+        public AccountService(IUserService userService, IPersonService personService,IBankActivityService bankActivityService,ILastTransactionService lastTransactionService)
         {
             _userService = userService;
             _personService = personService;
             _bankActivityService = bankActivityService;
+            _lastTransactionService = lastTransactionService;
         }
+
+        public async Task<bool> BankUserTransaction(TrasactionDTO trasactionDTO)
+        {
+           return await _bankActivityService.BankUserTransaction(trasactionDTO);
+        }
+
         public async Task<bool> CreateBankUsers(BankUserDTO bankUserDTO)
         {
             //User user
@@ -27,7 +35,7 @@ namespace Commerce_Bank.DataAccess.Services
             {
                 //mapping user entered field to the database table
                 AccountNo = bankUserDTO.AccountNo,
-                Account_TypId = bankUserDTO.Account_Type_Id,
+                Account_TypeId = bankUserDTO.Account_Type_Id,
                 Firstname = bankUserDTO.FirstName,
                 Lastname = bankUserDTO.LastName,
                 IsActive = true,
@@ -52,16 +60,59 @@ namespace Commerce_Bank.DataAccess.Services
                         IsDeposit = true,
                         IsOpeningBalance = true,
                         PersonId = person.Id,
-                        TrasactionAmount = bankUserDTO.InitialDeposit
+                        TrasactionAmount = bankUserDTO.InitialDeposit,
+                        TransactionDate=DateTime.Now
+
                     };
                     var created = await _bankActivityService.Save(bank_Activity);
-                    if(created>0)
+                    if (created > 0)
+                    {
+                        Last_Transaction last_Transaction = new Last_Transaction()
+                        {
+                            Balance = bankUserDTO.InitialDeposit,
+                            DateCreated = DateTime.Now,
+                            PersonId = person.Id
+                        };
+                        await _lastTransactionService.Save(last_Transaction);
+                    }
                     return true;
                 }
                 
             }
             return false;
             
+        }
+
+        public async Task<IEnumerable<TrasactionDisplayDTO>> GetAccountTransactionBy(int PersonId)
+        {
+            return await _bankActivityService.GetAccountTransactionBy(PersonId);
+        }
+
+        public async Task<IEnumerable<DisplayAccountHolderDetailDTO>> GetAllAccountHolderDetail()
+        {
+            return await _lastTransactionService.GetAllAccountHolderDetail();
+        }
+
+        public async Task<decimal> GetUserCurentAccountBalance(int PersonId)
+        {
+            return await _lastTransactionService.GetUserCurentAccountBalance(PersonId);
+        }
+
+        public async Task<UserLoginDTO> Login(string username, string password)
+        {
+            var user=await _userService.GetUserBy(username, password);
+            if (user == null)
+                throw new NullReferenceException("User not exist");
+            UserLoginDTO userLoginDTO = new UserLoginDTO()
+            {
+                Fullname = $"{user.Person.Firstname} {user.Person.Lastname}",
+                AccountNumber = user.Person.AccountNo,
+                UserId = user.Id,
+                Username = user.Username,
+                PersonId=user.PersonId
+            };
+            return userLoginDTO;
+                
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Commerce_Bank.DataAccess.Model
         public string PhoneNo { get; set; }
         public string AccountNo { get; set; }
         public bool IsActive { get; set; }
-        public int Account_TypId { get; set; }
+        public int Account_TypeId { get; set; }
         public virtual Account_Type Account_Type { get; set; }
 
     }

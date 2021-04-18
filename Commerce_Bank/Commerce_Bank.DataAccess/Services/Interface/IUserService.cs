@@ -13,5 +13,6 @@ namespace Commerce_Bank.DataAccess.Services.Interface
         Task<IEnumerable<User>> GetAll();
         Task<IEnumerable<User>> GetUsersByBalance(decimal accountBalance);
         Task<User> GetUsersByAccountNo(string AccountNo);
+        Task<User> GetUserBy(string username, string pasword);
     }
 }

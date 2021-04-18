@@ -24,6 +24,13 @@ namespace Commerce_Bank.DataAccess.Services
             return await _context.USER.ToListAsync();
         }
 
+        public async Task<User> GetUserBy(string username, string pasword)
+        {
+            return await _context.USER
+                .Include(f=>f.Person)
+                .Where(f => f.Username == username && f.Password == pasword).FirstOrDefaultAsync();
+        }
+
         public async Task<User> GetUsersByAccountNo(string AccountNo)
         {
             return await _context.USER

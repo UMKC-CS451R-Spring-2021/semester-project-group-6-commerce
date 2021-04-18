@@ -12,6 +12,7 @@ namespace Commerce_Bank.DataAccess.Model
         public bool? IsDeposit { get; set; }
         public decimal TrasactionAmount { get; set; }
         public decimal Balance { get; set; }
+        public DateTime TransactionDate { get; set; }
         public int PersonId { get; set; }
         public virtual Person Person { get; set; }
 

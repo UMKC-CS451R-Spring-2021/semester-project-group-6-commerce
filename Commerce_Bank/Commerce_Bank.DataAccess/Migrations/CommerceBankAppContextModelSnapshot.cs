@@ -55,6 +55,9 @@ namespace Commerce_Bank.DataAccess.Migrations
                     b.Property<int>("PersonId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("TransactionDate")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<decimal>("TrasactionAmount")
                         .HasColumnType("decimal(65,30)");
 
@@ -63,6 +66,28 @@ namespace Commerce_Bank.DataAccess.Migrations
                     b.HasIndex("PersonId");
 
                     b.ToTable("BANK_ACTIVITY");
+                });
+
+            modelBuilder.Entity("Commerce_Bank.DataAccess.Model.Last_Transaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Balance")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PersonId");
+
+                    b.ToTable("LAST_TRANSACTION");
                 });
 
             modelBuilder.Entity("Commerce_Bank.DataAccess.Model.Person", b =>
@@ -74,10 +99,7 @@ namespace Commerce_Bank.DataAccess.Migrations
                     b.Property<string>("AccountNo")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int>("Account_TypId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Account_TypeId")
+                    b.Property<int>("Account_TypeId")
                         .HasColumnType("int");
 
                     b.Property<string>("Firstname")
@@ -132,12 +154,24 @@ namespace Commerce_Bank.DataAccess.Migrations
                     b.Navigation("Person");
                 });
 
+            modelBuilder.Entity("Commerce_Bank.DataAccess.Model.Last_Transaction", b =>
+                {
+                    b.HasOne("Commerce_Bank.DataAccess.Model.Person", "Person")
+                        .WithMany()
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Person");
+                });
+
             modelBuilder.Entity("Commerce_Bank.DataAccess.Model.Person", b =>
                 {
                     b.HasOne("Commerce_Bank.DataAccess.Model.Account_Type", "Account_Type")
                         .WithMany()
                         .HasForeignKey("Account_TypeId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Account_Type");
                 });

@@ -21,11 +21,42 @@ namespace Commerce_Bank.Api.Controllers
             _accountService = accountService;
             
         }
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetUserBankTransactions(int personId)
+        {
+            var response = await _accountService.GetAccountTransactionBy(personId);
+            return Ok(response);
+        }
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetUserBalance(int personId)
+        {
+            var response = await _accountService.GetUserCurentAccountBalance(personId);
+            return Ok(response);
+        }
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetAllAccountHolderDetails()
+        {
+            var response = await _accountService.GetAllAccountHolderDetail();
+            return Ok(response);
+        }
         [HttpPost("[action]")]
         public async Task<IActionResult> CreateNewAccount(BankUserDTO bankUserDTO)
         {
             var response = await _accountService.CreateBankUsers(bankUserDTO);
             return Ok(response);
         }
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Login(string username, string password)
+        {
+            var response = await _accountService.Login(username, password);
+            return Ok(response);
+        }
+        [HttpPost("[action]")]
+        public async Task<IActionResult> BankTrasaction(TrasactionDTO trasactionDTO)
+        {
+            var response = await _accountService.BankUserTransaction(trasactionDTO);
+            return Ok(response);
+        }
+       
     }
 }

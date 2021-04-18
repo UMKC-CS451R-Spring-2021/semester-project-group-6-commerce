@@ -27,5 +27,6 @@ namespace Commerce_Bank.DataAccess.Model
         public DbSet<Person> PERSON { get; set; }
         public DbSet<Account_Type> ACCOUNT_TYPE { get; set; }
         public DbSet<Bank_Activity> BANK_ACTIVITY { get; set; }
+        public DbSet<Last_Transaction> LAST_TRANSACTION { get; set; }
     }
 }

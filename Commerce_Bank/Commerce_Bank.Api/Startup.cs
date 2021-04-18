@@ -41,6 +41,7 @@ namespace Commerce_Bank.Api
             services.AddScoped(typeof(IAccountTypeService), typeof(AccountTypeService));
             services.AddScoped(typeof(IBankActivityService), typeof(BankActivityService));
             services.AddScoped(typeof(IAccountService), typeof(AccountService));
+            services.AddScoped(typeof(ILastTransactionService), typeof(LastTransactionService));
             services.AddScoped(typeof(IRepositoryService<>), typeof(RepositoryService<>));
             //this is for api documentation
             services.AddSwaggerGen(c =>
