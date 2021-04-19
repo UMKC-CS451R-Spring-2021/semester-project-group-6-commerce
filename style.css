@@ -271,14 +271,24 @@ article {
     margin: 5px;
     padding: 5px;
     cursor: pointer;
+    color: white;
 }
 
-.whitebackground {
-    background-color: white;
-    font-family: 'Poppins';
+.whitebackground1 {
+        background-color: white;
+        font-family: 'Poppins';
+        border: 2px solid black;
+        padding: 70px;
+        width: 15%;
+}
+
+.whitebackground2 {
+        background-color: white;
+        font-family: 'Poppins';
 }
 
 .main {
+    background-color: white;
     display: flex;
     justify-content: space-around;
 }
