@@ -275,11 +275,12 @@ article {
 }
 
 .whitebackground1 {
-        background-color: white;
-        font-family: 'Poppins';
+        border-radius: 25px;
         border: 2px solid black;
-        padding: 70px;
+        padding: 20px;
         width: 15%;
+        height: 325px;
+        font-family: 'Poppins';
 }
 
 .whitebackground2 {
