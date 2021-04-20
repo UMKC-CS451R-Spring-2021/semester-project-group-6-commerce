@@ -35,7 +35,7 @@ namespace Commerce_Bank.DataAccess.Services
 
                     Bank_Activity bank_Activity = new Bank_Activity();
                     //if the trasaction type is true(credit transaction) then we substract the transaction amount from the previous balance, else we sum the trasaction amount with the previous balance
-                    bank_Activity.Balance = trasactionDTO.TransactionType ? (bank_Activity.Balance + trasactionDTO.TransactionAmount) : (bank_Activity.Balance - trasactionDTO.TransactionAmount);
+                    bank_Activity.Balance = trasactionDTO.TransactionType ? (lastTransaction.Balance + trasactionDTO.TransactionAmount) : (lastTransaction.Balance - trasactionDTO.TransactionAmount);
                     bank_Activity.Description = trasactionDTO.Description;
                     bank_Activity.IsDeposit = trasactionDTO.TransactionType ? true : false;
                     bank_Activity.IsOpeningBalance = false;

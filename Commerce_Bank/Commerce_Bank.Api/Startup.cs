@@ -33,7 +33,8 @@ namespace Commerce_Bank.Api
             services.AddControllers();
             //this helps to inject the connection string value from appsettings.json
             string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContextPool<CommerceBankAppContext>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
+            services.AddDbContextPool<CommerceBankAppContext>(options =>
+            options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
             //inject the service in this method to enable the api to interact and fetch desired records from the Data Access Layer(DAL)
             services.AddScoped(typeof(IUserService), typeof(UserService)); //this binds the userservice(concrete class) to the light weight Iuserservice
             //meaning that where ever we have Iuserservice we indirectly have access to the Userservice(concrete) class methods
@@ -53,6 +54,8 @@ namespace Commerce_Bank.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //authomatic database update
+            UpdateDatabase(app);
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -76,6 +79,19 @@ namespace Commerce_Bank.Api
             {
                 endpoints.MapControllers();
             });
+        }
+        //this method helps to apply automatically  the migration class on the database
+        private static void UpdateDatabase(IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices
+                .GetRequiredService<IServiceScopeFactory>()
+                .CreateScope())
+            {
+                using (var context = serviceScope.ServiceProvider.GetService<CommerceBankAppContext>())
+                {
+                    context.Database.Migrate();
+                }
+            }
         }
     }
 }

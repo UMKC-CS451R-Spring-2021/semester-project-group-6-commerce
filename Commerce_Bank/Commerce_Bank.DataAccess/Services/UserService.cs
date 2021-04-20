@@ -13,6 +13,7 @@ namespace Commerce_Bank.DataAccess.Services
     //In a lay man term The concrete class is the workshop of the interface
     public class UserService:RepositoryService<User>,IUserService
     {
+        //context exposes the database object to the application
         public UserService(CommerceBankAppContext context)
            : base(context)
         {
@@ -21,7 +22,7 @@ namespace Commerce_Bank.DataAccess.Services
 
         public async Task<IEnumerable<User>> GetAll()
         {
-            return await _context.USER.ToListAsync();
+            return await _context.USER.ToListAsync();//go to the USER table get me all the user records there
         }
 
         public async Task<User> GetUserBy(string username, string pasword)
@@ -29,6 +30,7 @@ namespace Commerce_Bank.DataAccess.Services
             return await _context.USER
                 .Include(f=>f.Person)
                 .Where(f => f.Username == username && f.Password == pasword).FirstOrDefaultAsync();
+            //go to the user table get me the first user with username=supplied username and password=supplied password
         }
 
         public async Task<User> GetUsersByAccountNo(string AccountNo)
@@ -36,6 +38,7 @@ namespace Commerce_Bank.DataAccess.Services
             return await _context.USER
                 .Include(f=>f.Person)
                 .Where(f => f.Person.AccountNo == AccountNo).FirstOrDefaultAsync();
+            //go to user table get me the user with accountno=supplied account no
         }
 
         public Task<IEnumerable<User>> GetUsersByBalance(decimal accountBalance)

@@ -118,8 +118,8 @@ C:\Users\udevalentine\Documents\Mine\codementor Code\Commerce_Bank\Commerce_Bank
 C:\Users\udevalentine\Documents\Mine\codementor Code\Commerce_Bank\Commerce_Bank.Api\obj\Debug\netcoreapp3.1\Commerce_Bank.Api.pdb
 C:\Users\udevalentine\Documents\Mine\codementor Code\Commerce_Bank\Commerce_Bank.Api\obj\Debug\netcoreapp3.1\Commerce_Bank.Api.genruntimeconfig.cache
 C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Api\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Api\bin\Debug\netcoreapp3.1\Commerce_Bank.Api.exe
 C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Api\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Api\bin\Debug\netcoreapp3.1\Commerce_Bank.Api.exe
 C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Api\bin\Debug\netcoreapp3.1\Commerce_Bank.Api.deps.json
 C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Api\bin\Debug\netcoreapp3.1\Commerce_Bank.Api.runtimeconfig.json
 C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Api\bin\Debug\netcoreapp3.1\Commerce_Bank.Api.runtimeconfig.dev.json
