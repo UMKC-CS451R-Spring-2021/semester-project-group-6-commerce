@@ -1,0 +1,12 @@
+﻿@if (TempData["notification"] != null)
+{
+    <link href="~/sweetAlert/sweetalert.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/sweetAlert/sweetalert.min.js"></script>
+    <script>
+        $(function () {
+        @Html.Raw(TempData["notification"])
+        })
+    </script>
+
+}

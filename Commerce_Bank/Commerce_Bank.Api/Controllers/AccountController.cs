@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Commerce_Bank.Api.Model;
 using Commerce_Bank.DataAccess.Model.DTO;
 using Commerce_Bank.DataAccess.Services;
 using Commerce_Bank.DataAccess.Services.Interface;
@@ -46,9 +47,9 @@ namespace Commerce_Bank.Api.Controllers
             return Ok(response);
         }
         [HttpPost("[action]")]
-        public async Task<IActionResult> Login(string username, string password)
+        public async Task<IActionResult> Login(LoginModel loginModel)
         {
-            var response = await _accountService.Login(username, password);
+            var response = await _accountService.Login(loginModel.username, loginModel.password);
             return Ok(response);
         }
         [HttpPost("[action]")]

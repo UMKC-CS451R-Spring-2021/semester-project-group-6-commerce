@@ -14,13 +14,16 @@ namespace Commerce_Bank.DataAccess.Services
         private readonly IPersonService _personService;
         private readonly IBankActivityService _bankActivityService;
         private readonly ILastTransactionService _lastTransactionService;
+        private readonly IMailService _mailService;
         //contructor injection(Dependency injection)
-        public AccountService(IUserService userService, IPersonService personService,IBankActivityService bankActivityService,ILastTransactionService lastTransactionService)
+        public AccountService(IUserService userService, IPersonService personService,
+            IBankActivityService bankActivityService,ILastTransactionService lastTransactionService,IMailService mailService)
         {
             _userService = userService;
             _personService = personService;
             _bankActivityService = bankActivityService;
             _lastTransactionService = lastTransactionService;
+            _mailService = mailService;
         }
 
         public async Task<bool> BankUserTransaction(TrasactionDTO trasactionDTO)
@@ -100,18 +103,27 @@ namespace Commerce_Bank.DataAccess.Services
 
         public async Task<UserLoginDTO> Login(string username, string password)
         {
-            var user=await _userService.GetUserBy(username, password);
-            if (user == null)
-                throw new NullReferenceException("User not exist");
-            UserLoginDTO userLoginDTO = new UserLoginDTO()
+            try
             {
-                Fullname = $"{user.Person.Firstname} {user.Person.Lastname}",
-                AccountNumber = user.Person.AccountNo,
-                UserId = user.Id,
-                Username = user.Username,
-                PersonId=user.PersonId
-            };
-            return userLoginDTO;
+                var user = await _userService.GetUserBy(username, password);
+                if (user == null)
+                    throw new Exception("User not exist");
+                UserLoginDTO userLoginDTO = new UserLoginDTO()
+                {
+                    Fullname = $"{user.Person.Firstname} {user.Person.Lastname}",
+                    AccountNumber = user.Person.AccountNo,
+                    UserId = user.Id,
+                    Username = user.Username,
+                    PersonId = user.PersonId
+                };
+                return userLoginDTO;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
                 
         }
     }

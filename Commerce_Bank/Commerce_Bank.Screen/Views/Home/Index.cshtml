@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
+    <title>Commerce Bank</title>
+</head>
+
+<body>
+    <partial name="_NotificationPanel" />
+    <img src="~/Images/cb.png" class="center">
+    <article class="br3 ba b--black-10 bgc mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
+        <main class="pa4 black-80">
+            <form class="measure" asp-action="Login" asp-controller="home" method="post">
+
+                <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+                    <legend class="f4 fw6 ph0 mh0">Sign In</legend>
+
+                    <div class="mt3">
+                        <label class="db fw6 lh-copy f6" for="email-address">Email</label>
+                        <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                               type="email"
+                               name="username"
+                               id="email-address" />
+                    </div>
+
+                    <div class="mv3">
+                        <label class="db fw6 lh-copy f6" for="password">Password</label>
+                        <input class="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                               type="password"
+                               name="password"
+                               id="password" />
+                    </div>
+
+                </fieldset>
+
+                <div class="">
+                    <input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+                           type="submit"
+                           value="Signin" />
+                </div>
+
+            </form>
+            @*<script language="javascript">
+                    function check(form) {
+
+                        if (form.username.value == "user@gmail.com" && form.password.value == "pass") {
+                            return true;
+                        }
+                        else {
+                            alert("Incorrect Password or Username")
+                            return false;
+                        }
+                    }
+                </script>*@
+
+        </main>
+    </article>
+</body>
+
+</html>

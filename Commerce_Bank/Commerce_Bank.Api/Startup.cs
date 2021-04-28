@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Commerce_Bank.DataAccess.Model;
+using Commerce_Bank.DataAccess.Model.DTO;
 using Commerce_Bank.DataAccess.Services;
 using Commerce_Bank.DataAccess.Services.Interface;
 using Microsoft.AspNetCore.Builder;
@@ -43,12 +44,15 @@ namespace Commerce_Bank.Api
             services.AddScoped(typeof(IBankActivityService), typeof(BankActivityService));
             services.AddScoped(typeof(IAccountService), typeof(AccountService));
             services.AddScoped(typeof(ILastTransactionService), typeof(LastTransactionService));
+            services.AddScoped(typeof(IMailService), typeof(MailService));
             services.AddScoped(typeof(IRepositoryService<>), typeof(RepositoryService<>));
             //this is for api documentation
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Commerce_Bank API", Version = "v1" });
             });
+            //inject email service
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

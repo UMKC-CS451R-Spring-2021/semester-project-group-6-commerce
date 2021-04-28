@@ -1,0 +1,115 @@
+﻿@model Commerce_Bank.Screen.Models.ViewModel.AccountViewModel
+@{
+    ViewData["Title"] = "Transactions";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    
+    <link rel="stylesheet" href="~/css/style.css">
+
+</head>
+
+<body>
+    <div class="body">
+        <img width=510 height=200 src="https://cdn.discordapp.com/attachments/814265972059930647/829811925202108436/2018-cb-ca-white.png" />
+
+        <button class="textButton">
+            About Us
+        </button>
+        <button class="textButton">
+            Settings
+        </button>
+        <button class="textButton">
+            Contact Us
+        </button>
+        <br>
+        <br>
+    </div>
+
+    <div class="whitebackground2">
+        <br>
+        <br>
+        <button class="transactionButton">
+            Add Transaction
+        </button>
+        <br>
+        <br>
+        <div class="main">
+            <br>
+            <br>
+            <br>
+            <article class="whitebackground3">
+                <p style="font-size:25px;float:left;margin:10px">Accounts</p>
+
+                <button class="accountButton">
+                    Checking
+                    <br>
+                    $
+                </button>
+                <br>
+                <button class="accountButton">
+                    Savings
+                    <br>
+                    $
+                </button>
+                <br>
+            </article>
+
+            <article class="whitebackground4">
+                <p style="font-size:25px;float:left;margin:10px;">Transactions </p>
+                <br>
+                <br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>SN</th>
+                            <th>Transaction-Type</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        @{var count=0;}
+                        @foreach(var item in Model.Trasactions)
+                        {
+                            count += 1;
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.TrasactionType</td>
+                            <td>@item.Description</td>
+                            <td>@item.Date</td>
+                            <td>@item.TrasactionAmount</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+                <p style="font-size:25px;border:none;background:#DCDCDC">
+                    All your transactions will show up here
+                </p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </article>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</body>
+</html>
+
+
