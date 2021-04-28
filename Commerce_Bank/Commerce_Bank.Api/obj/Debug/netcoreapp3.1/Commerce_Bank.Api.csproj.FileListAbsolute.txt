@@ -363,3 +363,6 @@ C:\Users\tchiv\Desktop\commerceBankDocuments\Commerce_Bank\Commerce_Bank.Api\obj
 C:\Users\tchiv\Desktop\commerceBankDocuments\Commerce_Bank\Commerce_Bank.Api\obj\Debug\netcoreapp3.1\Commerce_Bank.Api.dll
 C:\Users\tchiv\Desktop\commerceBankDocuments\Commerce_Bank\Commerce_Bank.Api\obj\Debug\netcoreapp3.1\Commerce_Bank.Api.pdb
 C:\Users\tchiv\Desktop\commerceBankDocuments\Commerce_Bank\Commerce_Bank.Api\obj\Debug\netcoreapp3.1\Commerce_Bank.Api.genruntimeconfig.cache
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Api\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Api\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Api\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll

@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("fcce7e2b-a62f-4a2d-a73c-13729cc9f4ed")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commerce_Bank.Screen")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

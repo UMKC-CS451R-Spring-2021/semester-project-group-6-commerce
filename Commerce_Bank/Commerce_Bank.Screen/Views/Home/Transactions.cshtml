@@ -8,26 +8,31 @@
 <html>
 <head>
 
-    
+
     <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
     <div class="body">
-        <img width=510 height=200 src="https://cdn.discordapp.com/attachments/814265972059930647/829811925202108436/2018-cb-ca-white.png" />
+        <a asp-action="Dashboard" asp-controller="Home">
+            <img width=510 height=200 src="https://cdn.discordapp.com/attachments/814265972059930647/829811925202108436/2018-cb-ca-white.png" />
+            </a>
+            <a asp-action="Logout" asp-controller="Home" class="textButton">
+                Log Out
+            </a>
+            <button class="textButton">
+                Settings
+            </button>
 
-        <button class="textButton">
-            About Us
-        </button>
-        <button class="textButton">
-            Settings
-        </button>
-        <button class="textButton">
-            Contact Us
-        </button>
-        <br>
-        <br>
+            <a href="https://www.commercebank.com/contact-us#" class="textButton">
+                Contact Us
+            </a>
+
+            <br>
+            <br>
     </div>
 
     <div class="whitebackground2">

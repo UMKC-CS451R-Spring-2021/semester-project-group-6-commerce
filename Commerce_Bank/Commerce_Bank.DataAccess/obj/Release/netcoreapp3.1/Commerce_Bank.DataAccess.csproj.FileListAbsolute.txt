@@ -1,0 +1,12 @@
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.DataAccess\bin\Release\netcoreapp3.1\Commerce_Bank.DataAccess.deps.json
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.DataAccess\bin\Release\netcoreapp3.1\Commerce_Bank.DataAccess.runtimeconfig.json
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.DataAccess\bin\Release\netcoreapp3.1\Commerce_Bank.DataAccess.runtimeconfig.dev.json
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.DataAccess\bin\Release\netcoreapp3.1\Commerce_Bank.DataAccess.dll
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.DataAccess\bin\Release\netcoreapp3.1\Commerce_Bank.DataAccess.pdb
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.DataAccess\obj\Release\netcoreapp3.1\Commerce_Bank.DataAccess.csprojAssemblyReference.cache
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.DataAccess\obj\Release\netcoreapp3.1\Commerce_Bank.DataAccess.AssemblyInfoInputs.cache
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.DataAccess\obj\Release\netcoreapp3.1\Commerce_Bank.DataAccess.AssemblyInfo.cs
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.DataAccess\obj\Release\netcoreapp3.1\Commerce_Bank.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.DataAccess\obj\Release\netcoreapp3.1\Commerce_Bank.DataAccess.dll
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.DataAccess\obj\Release\netcoreapp3.1\Commerce_Bank.DataAccess.pdb
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.DataAccess\obj\Release\netcoreapp3.1\Commerce_Bank.DataAccess.genruntimeconfig.cache
