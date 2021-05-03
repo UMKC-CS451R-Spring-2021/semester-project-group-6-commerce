@@ -10,6 +10,7 @@ namespace Commerce_Bank.DataAccess.Model.DTO
         public decimal TransactionAmount { get; set; }
         public string Description { get; set; }
         public int PersonId { get; set; }
+        
 
     }
 }
