@@ -466,3 +466,4 @@ C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_
 C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Screen\obj\Release\netcoreapp3.1\win-x86\Commerce_Bank.Screen.dll
 C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Screen\obj\Release\netcoreapp3.1\win-x86\Commerce_Bank.Screen.pdb
 C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Screen\obj\Release\netcoreapp3.1\win-x86\Commerce_Bank.Screen.genruntimeconfig.cache
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Screen\obj\Release\netcoreapp3.1\win-x86\Razor\Views\Home\AddTransaction.cshtml.g.cs

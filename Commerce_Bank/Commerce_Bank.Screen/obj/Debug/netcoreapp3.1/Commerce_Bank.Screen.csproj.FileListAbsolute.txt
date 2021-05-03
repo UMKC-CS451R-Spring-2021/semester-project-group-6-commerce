@@ -461,3 +461,4 @@ C:\Users\tchiv\Desktop\New folder\Commerce_Bank\Commerce_Bank.Screen\obj\Debug\n
 C:\Users\tchiv\Desktop\New folder\Commerce_Bank\Commerce_Bank.Screen\obj\Debug\netcoreapp3.1\Commerce_Bank.Screen.dll
 C:\Users\tchiv\Desktop\New folder\Commerce_Bank\Commerce_Bank.Screen\obj\Debug\netcoreapp3.1\Commerce_Bank.Screen.pdb
 C:\Users\tchiv\Desktop\New folder\Commerce_Bank\Commerce_Bank.Screen\obj\Debug\netcoreapp3.1\Commerce_Bank.Screen.genruntimeconfig.cache
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Screen\obj\Debug\netcoreapp3.1\Razor\Views\Home\AddTransaction.cshtml.g.cs

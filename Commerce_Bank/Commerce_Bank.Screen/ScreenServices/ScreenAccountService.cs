@@ -20,6 +20,16 @@ namespace Commerce_Bank.Screen.ScreenServices
             client = _httpClientFactory.CreateClient("meta");
         }
 
+        public async  Task<bool> AddTransaction(TransactionModel transactionModel)
+        {
+            var response = await client.PostAsJsonAsync<TransactionModel>($"Account/BankTrasaction", transactionModel);
+            if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public async Task<IEnumerable<TrasactionDisplayModel>> GetUserBankTransactions(int PersonId)
         {
             var response=await client.GetAsync($"Account/GetUserBankTransactions?personId={PersonId}");

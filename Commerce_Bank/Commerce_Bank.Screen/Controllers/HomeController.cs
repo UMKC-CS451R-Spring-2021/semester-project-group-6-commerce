@@ -106,5 +106,28 @@ namespace Commerce_Bank.Screen.Controllers
             accountViewModel.Trasactions= (await _screenAccountService.GetUserBankTransactions(personId)).ToList();
             return View(accountViewModel);
         }
+        public  ActionResult AddTransaction()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddTransaction(string transactionDescription, decimal transactionAmount, string transactionType)
+        {
+            string personIdString = User.FindFirstValue(ClaimTypes.Sid);
+            int personId = Convert.ToInt32(personIdString);
+            bool type = transactionType == "DR" ? false : true;
+            TransactionModel transactionModel = new TransactionModel()
+            {
+                Description = transactionDescription,
+                TransactionAmount = transactionAmount,
+                TransactionType = type,
+                PersonId = personId
+            };
+            var response=await _screenAccountService.AddTransaction(transactionModel);
+            if (response)
+                return RedirectToAction("Transactions");
+            return View();
+        }
     }
 }

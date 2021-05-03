@@ -10,5 +10,6 @@ namespace Commerce_Bank.Screen.ScreenServices.ScreenInterface
     {
         Task<LoginUserResponse> LoginUser(LoginModel model);
         Task<IEnumerable<TrasactionDisplayModel>> GetUserBankTransactions(int PersonId);
+        Task<bool> AddTransaction(TransactionModel transactionModel);
     }
 }
