@@ -3,6 +3,7 @@ C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_
 C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Screen\obj\Release\netcoreapp3.1\win-x86\PubTmp\Out\wwwroot\css\style.css
 C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Screen\obj\Release\netcoreapp3.1\win-x86\PubTmp\Out\wwwroot\favicon.ico
 C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Screen\obj\Release\netcoreapp3.1\win-x86\PubTmp\Out\wwwroot\Images\cb.png
+C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Screen\obj\Release\netcoreapp3.1\win-x86\PubTmp\Out\wwwroot\Images\user.png
 C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Screen\obj\Release\netcoreapp3.1\win-x86\PubTmp\Out\wwwroot\js\site.js
 C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Screen\obj\Release\netcoreapp3.1\win-x86\PubTmp\Out\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 C:\Users\tchiv\Desktop\semester-project-group-6-commerce\Commerce_Bank\Commerce_Bank.Screen\obj\Release\netcoreapp3.1\win-x86\PubTmp\Out\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map

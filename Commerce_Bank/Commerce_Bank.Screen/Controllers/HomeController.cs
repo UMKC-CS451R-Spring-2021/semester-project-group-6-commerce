@@ -67,6 +67,7 @@ namespace Commerce_Bank.Screen.Controllers
 
                         var principal = new ClaimsPrincipal(identity);
                         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                        TempData["Name"] = result.Fullname;
 
                         return RedirectToAction("Dashboard", "Home");
                     }
@@ -87,6 +88,7 @@ namespace Commerce_Bank.Screen.Controllers
         //[Authorize]
         public IActionResult Dashboard()
         {
+            ViewBag.Name = TempData["Name"] as string;
             return View();
         }
         public async Task<IActionResult> Logout()
