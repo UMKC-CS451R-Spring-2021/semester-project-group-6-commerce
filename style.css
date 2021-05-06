@@ -285,22 +285,6 @@ article {
     margin-left: auto;
 }
 
-.textButton {
-    background: none;
-    border: none;
-    /*font: poppins;*/
-    font-size: 20px;
-    float: right;
-    margin: 5px;
-    padding: 5px;
-    cursor: pointer;
-}
-
-.whitebackground {
-    background-color: white;
-    /*font-family: 'Poppins';*/
-}
-
 .main {
     display: flex;
     justify-content: space-around;
@@ -375,3 +359,75 @@ input {
   left: -25px;
   content: "X";
 }
+
+.textButton {
+        background: none;
+        border: none;
+        font: poppins;
+        font-size: 25px;
+        float: right;
+        margin: 5px;
+        padding: 5px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .whitebackground1 {
+        border-radius: 25px;
+        border: 2px solid black;
+        padding: 20px;
+        width: 15%;
+        height: 325px;
+        font-family: 'Poppins';
+    }
+
+    .whitebackground2 {
+        background-color: white;
+        font-family: 'Poppins';
+    }
+
+    .whitebackground3 {
+        border-radius: 25px;
+        border: 2px solid black;
+        padding: 7px;
+        width: 15%;
+        height: 230px;
+        font-family: 'Poppins';
+    }
+
+    .whitebackground4 {
+        border-radius: 25px;
+        border: 2px solid black;
+        padding: 7px;
+        width: 50%;
+        height: 75%;
+        font-family: 'Poppins';
+    }
+
+    .main {
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .accountButton {
+        background: #DCDCDC;
+        border: none;
+        font: poppins;
+        font-size: 25px;
+        margin: 5px;
+        padding: 5px;
+        width: 90%;
+        cursor: pointer;
+    }
+
+    .transactionButton {
+        background: #DCDCDC;
+        border: none;
+        margin-left: 79%;
+        font: poppins;
+        font-size: 22px;
+        width: 180px;
+        height: 30px;
+        cursor: pointer;
+    }
