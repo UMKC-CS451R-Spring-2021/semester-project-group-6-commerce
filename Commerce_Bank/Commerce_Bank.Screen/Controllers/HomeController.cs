@@ -131,5 +131,14 @@ namespace Commerce_Bank.Screen.Controllers
                 return RedirectToAction("Transactions");
             return View();
         }
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ForgotPassword(string username, string newPassword)
+        {
+            return View();
+        }
     }
 }
