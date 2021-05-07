@@ -14,5 +14,6 @@ namespace Commerce_Bank.DataAccess.Services.Interface
         Task<IEnumerable<TrasactionDisplayDTO>> GetAccountTransactionBy(int PersonId);
         Task<decimal> GetUserCurentAccountBalance(int PersonId);
         Task<IEnumerable<DisplayAccountHolderDetailDTO>> GetAllAccountHolderDetail();
+        Task<bool> ForgotPassword(ForgotPasswordDTO forgotPasswordDTO);
     }
 }

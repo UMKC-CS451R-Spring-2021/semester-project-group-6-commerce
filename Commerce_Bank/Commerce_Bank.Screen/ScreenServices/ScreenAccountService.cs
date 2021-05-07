@@ -30,6 +30,31 @@ namespace Commerce_Bank.Screen.ScreenServices
             return false;
         }
 
+        public async Task<bool> ForgotPassword(ForgotPasswordModel forgotPasswordModel)
+        {
+            var response = await client.PostAsJsonAsync<ForgotPasswordModel>($"Account/ForgotPassword", forgotPasswordModel);
+            if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                
+                    return true;
+                
+            }
+            return false;
+        }
+
+        public async Task<decimal> GetUserAccountBalance(int PersonId)
+        {
+            var response = await client.GetAsync($"Account/GetUserBalance?personId={PersonId}");
+            if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+               var data= await response.Content.ReadAsStringAsync();
+                if(data!=null)
+                return (decimal)data[0];
+
+            }
+            return 0;
+        }
+
         public async Task<IEnumerable<TrasactionDisplayModel>> GetUserBankTransactions(int PersonId)
         {
             var response=await client.GetAsync($"Account/GetUserBankTransactions?personId={PersonId}");

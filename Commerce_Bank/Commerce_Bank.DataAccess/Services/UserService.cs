@@ -1,4 +1,5 @@
 ﻿using Commerce_Bank.DataAccess.Model;
+using Commerce_Bank.DataAccess.Model.DTO;
 using Commerce_Bank.DataAccess.Services.Interface;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -18,6 +19,24 @@ namespace Commerce_Bank.DataAccess.Services
            : base(context)
         {
            
+        }
+
+        public async Task<bool> ForgotPassword(ForgotPasswordDTO forgotPasswordDTO)
+        {
+            if(forgotPasswordDTO?.Username!=null && forgotPasswordDTO?.NewPassword != null)
+            {
+                var user = await GetBy(f => f.Username == forgotPasswordDTO.Username);
+                if (user?.Id > 0)
+                {
+                    user.Password = forgotPasswordDTO.NewPassword;
+                    var isUpdated = await Update(user);
+                    if (isUpdated > 0)
+                        return true;
+                }
+            }
+            
+            return false;
+
         }
 
         public async Task<IEnumerable<User>> GetAll()

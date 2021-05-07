@@ -8,5 +8,6 @@ namespace Commerce_Bank.Screen.Models.ViewModel
     public class AccountViewModel
     {
         public List<TrasactionDisplayModel> Trasactions { get; set; }
+        public decimal CurrentAccountBalance { get; set; }
     }
 }

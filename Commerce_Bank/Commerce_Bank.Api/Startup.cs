@@ -36,8 +36,8 @@ namespace Commerce_Bank.Api
             string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContextPool<CommerceBankAppContext>(options =>
             options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
-            //inject the service in this method to enable the api to interact and fetch desired records from the Data Access Layer(DAL)
-            services.AddScoped(typeof(IUserService), typeof(UserService)); //this binds the userservice(concrete class) to the light weight Iuserservice
+            //inject the service in this method to enable the api to interact with records from the Data Access Layer(DAL)
+            services.AddScoped(typeof(IUserService), typeof(UserService)); 
             //meaning that where ever we have Iuserservice we indirectly have access to the Userservice(concrete) class methods
             services.AddScoped(typeof(IPersonService), typeof(PersonService));
             services.AddScoped(typeof(IAccountTypeService), typeof(AccountTypeService));

@@ -106,6 +106,8 @@ namespace Commerce_Bank.Screen.Controllers
             string personIdString = User.FindFirstValue(ClaimTypes.Sid);
             int personId = Convert.ToInt32(personIdString);
             accountViewModel.Trasactions= (await _screenAccountService.GetUserBankTransactions(personId)).ToList();
+            accountViewModel.CurrentAccountBalance= await _screenAccountService.GetUserAccountBalance(personId);
+
             return View(accountViewModel);
         }
         public  ActionResult AddTransaction()
@@ -136,8 +138,19 @@ namespace Commerce_Bank.Screen.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult ForgotPassword(string username, string newPassword)
+        public async Task<IActionResult >ForgotPassword(string username, string newPassword)
         {
+            ForgotPasswordModel forgotPasswordModel = new ForgotPasswordModel()
+            {
+                NewPassword = newPassword,
+                Username = username,
+            };
+            var isChanged=await _screenAccountService.ForgotPassword(forgotPasswordModel);
+            if(isChanged)
+            {
+                Alert("You have successfully reset your password, you can now login", NotificationType.info);
+                return RedirectToAction("Index");
+            }
             return View();
         }
     }

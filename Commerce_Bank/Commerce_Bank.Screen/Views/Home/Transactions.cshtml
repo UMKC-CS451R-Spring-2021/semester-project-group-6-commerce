@@ -53,7 +53,7 @@
                 <button class="accountButton">
                     Checking
                     <br>
-                    $
+                    $@Model.CurrentAccountBalance
                 </button>
                 <br>
                 <button class="accountButton">
@@ -89,7 +89,7 @@
                                 <td>@item.TrasactionType</td>
                                 <td>@item.Description</td>
                                 <td>@item.Date</td>
-                                <td>@item.TrasactionAmount</td>
+                                <td>$@item.TrasactionAmount</td>
                             </tr>
                         }
                     </tbody>

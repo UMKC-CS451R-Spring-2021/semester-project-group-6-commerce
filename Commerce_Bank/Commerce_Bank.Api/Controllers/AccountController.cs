@@ -15,7 +15,7 @@ namespace Commerce_Bank.Api.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-        //this called tight coupling. the time taken to instantiate this class is too enormous, it better that we user injection
+        // tight coupling. the time taken to instantiate this class is too enormous, it better that we user injection
         private readonly IAccountService _accountService;
         public AccountController(IAccountService accountService)
         {
@@ -58,6 +58,12 @@ namespace Commerce_Bank.Api.Controllers
             var response = await _accountService.BankUserTransaction(trasactionDTO);
             return Ok(response);
         }
-       
+        [HttpPost("[action]")]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordDTO forgotPasswordDTO)
+        {
+            var response = await _accountService.ForgotPassword(forgotPasswordDTO);
+            return Ok(response);
+        }
+
     }
 }

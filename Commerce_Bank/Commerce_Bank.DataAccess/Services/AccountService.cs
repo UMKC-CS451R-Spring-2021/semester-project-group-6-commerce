@@ -34,6 +34,10 @@ namespace Commerce_Bank.DataAccess.Services
         public async Task<bool> CreateBankUsers(BankUserDTO bankUserDTO)
         {
             //User user
+            //Check if username exist
+            var isUserExist=await _userService.GetBy(f => f.Username == bankUserDTO.UserName);
+            if (isUserExist?.Id > 0)
+                throw new Exception("Username Already exist");
             Person person = new Person()
             {
                 //mapping user entered field to the database table
@@ -84,6 +88,11 @@ namespace Commerce_Bank.DataAccess.Services
             }
             return false;
             
+        }
+
+        public async Task<bool> ForgotPassword(ForgotPasswordDTO forgotPasswordDTO)
+        {
+           return await  _userService.ForgotPassword(forgotPasswordDTO);
         }
 
         public async Task<IEnumerable<TrasactionDisplayDTO>> GetAccountTransactionBy(int PersonId)
